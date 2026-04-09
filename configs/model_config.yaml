@@ -1,0 +1,5 @@
+llm:
+  provider: mock
+  model_name: mock-math-reasoner
+sympy:
+  simplify_results: true

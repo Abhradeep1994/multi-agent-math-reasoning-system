@@ -1,0 +1,4 @@
+system:
+  save_outputs: true
+  outputs_dir: outputs
+  default_plot_points: 400

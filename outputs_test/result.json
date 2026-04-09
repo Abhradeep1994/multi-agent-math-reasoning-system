@@ -1,0 +1,37 @@
+{
+  "task": {
+    "raw_problem": "Solve x**2 - 5*x + 6 = 0",
+    "task_type": "solve_equation",
+    "expression": "x**2 - 5*x + 6 = 0",
+    "variable": "x"
+  },
+  "solver_output": {
+    "solution": [
+      "2",
+      "3"
+    ],
+    "method": "sympy_solveset"
+  },
+  "verifier_output": {
+    "verified": true,
+    "checks": [
+      true,
+      true
+    ],
+    "notes": "Equation solutions substituted back."
+  },
+  "visualizer_output": {
+    "plot_path": null
+  },
+  "explainer_output": {
+    "explanation": "Task type: solve_equation. The system computed the result as ['2', '3']. Verification status: passed."
+  },
+  "critic_output": {
+    "confidence_score": 1.0,
+    "feedback": "High confidence result."
+  },
+  "evaluation": {
+    "agreement_score": 1.0,
+    "confidence_score": 1.0
+  }
+}

@@ -1,0 +1,7 @@
+agents:
+  interpreter: {enabled: true}
+  solver: {enabled: true}
+  verifier: {enabled: true}
+  visualizer: {enabled: true}
+  explainer: {enabled: true}
+  critic: {enabled: true}

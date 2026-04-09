@@ -1,0 +1,6 @@
+BENCHMARK_PROBLEMS = [
+    "Solve x**2 - 5*x + 6 = 0",
+    "Differentiate sin(x) * x**2",
+    "Integrate x**2",
+    "Plot sin(x) + x**2",
+]
