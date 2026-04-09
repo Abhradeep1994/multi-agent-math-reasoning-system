@@ -1,4 +1,4 @@
-# Multi-Agent Math Reasoning System
+# Multi-Agent Math Reasoning System (WIP)
 
 A plug-and-run starter repository for a **self-correcting multi-agent AI system**
 that can interpret, solve, verify, explain, and visualize mathematical problems.
