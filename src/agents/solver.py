@@ -10,8 +10,13 @@ class SolverAgent:
 
     def run(self, task):
         if task.task_type == "solve_equation":
-            solutions = solve_equation(task.expression, task.variable)
-            return {"solution": [str(s) for s in solutions], "method": "sympy_solveset"}
+            solutions, exhaustive = solve_equation(task.expression, task.variable)
+            method = "sympy_solveset" if exhaustive else "sympy_solve_representative"
+            return {
+                "solution": [str(s) for s in solutions],
+                "method": method,
+                "exhaustive": exhaustive,
+            }
 
         if task.task_type == "differentiate":
             result = differentiate_expression(task.expression, task.variable)

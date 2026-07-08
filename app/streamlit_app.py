@@ -12,7 +12,11 @@ problem = st.text_input("Enter a math problem", "Solve x**2 - 5*x + 6 = 0")
 
 if st.button("Run"):
     workflow = MathReasoningWorkflow()
-    result = workflow.run(problem, outputs_dir="outputs")
+    try:
+        result = workflow.run(problem, outputs_dir="outputs")
+    except Exception as e:
+        st.error(f"Something went wrong processing that problem: {e}")
+        st.stop()
 
     col1, col2 = st.columns(2)
     with col1:

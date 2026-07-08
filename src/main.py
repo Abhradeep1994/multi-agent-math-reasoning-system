@@ -18,15 +18,19 @@ def main():
     parser.add_argument("--outputs-dir", type=str, default="outputs")
     args = parser.parse_args()
 
-    ensure_dir(args.outputs_dir)
-    workflow = MathReasoningWorkflow()
-    result = workflow.run(args.problem, outputs_dir=args.outputs_dir)
-    result["evaluation"] = evaluate_run(result)
+    try:
+        ensure_dir(args.outputs_dir)
+        workflow = MathReasoningWorkflow()
+        result = workflow.run(args.problem, outputs_dir=args.outputs_dir)
+        result["evaluation"] = evaluate_run(result)
 
-    out_path = Path(args.outputs_dir) / "result.json"
-    out_path.write_text(json.dumps(result, indent=2), encoding="utf-8")
-    print(json.dumps(result, indent=2))
-    print(f"Saved result to {out_path}")
+        out_path = Path(args.outputs_dir) / "result.json"
+        out_path.write_text(json.dumps(result, indent=2), encoding="utf-8")
+        print(json.dumps(result, indent=2))
+        print(f"Saved result to {out_path}")
+    except Exception as e:
+        print(f"Error: could not process this problem ({e.__class__.__name__}: {e}).", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
